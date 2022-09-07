@@ -1,15 +1,11 @@
 # plotly-challenge: Belly Button Biodiversity
 
-This repository contains an app displaying the following for each individual:
+This challenge will display the following:
 
-* A bar chart displaying the top 10 OTUs.
+* A bar chart of the top 10 OTUs.
 
-* A bubble chart displaying each sample for each OTU.
+* A bubble chart displaying each sample/OTU.
 
 * Sample metadata.
 
-* A gauge chart displaying weekly washing frequency.
-
-[JS file](static/js/app.js)
-
-The following page is created: https://kirran-jk.github.io/plotly-challenge/
+* A gauge chart of the weekly washing frequency.

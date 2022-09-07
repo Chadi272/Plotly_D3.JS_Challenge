@@ -24,24 +24,24 @@ d3.json(data).then(function(data) {
         select.appendChild(el);
     }
     
-    createPlot(jsonData[options[0]]);
-    createBubble(jsonData[options[0]]);
-    demoInfo(metadataJson[options[0]]);
-    createGauge(metadataJson[options[0]]);
+    CP(jsonData[options[0]]);
+    CB(jsonData[options[0]]);
+    DI(metadataJson[options[0]]);
+    CG(metadataJson[options[0]]);
 
 });
 
-function optionChanged(value) {
+function OpCh(value) {
     console.log(value)
     const sampleData = jsonData[value];
     const metadata = metadataJson[value];
-    createPlot(sampleData);
-    createBubble(sampleData);
-    demoInfo(metadata);
-    createGauge(metadata);
+    CP(sampleData);
+    CB(sampleData);
+    DI(metadata);
+    CG(metadata);
 }
 
-function createPlot(sampleData) {
+function CP(sampleData) {
     slicedValues = sampleData.sample_values.slice(0, 10);
     slicedIds = sampleData.otu_ids.slice(0, 10);
     slicedLabels = sampleData.otu_labels.slice(0, 10);
@@ -75,7 +75,7 @@ function createPlot(sampleData) {
     Plotly.newPlot("plot", traceData, layout);
 }
 
-function createBubble(sampleData) {
+function CB(sampleData) {
     var trace1 = {
         x: sampleData.otu_ids,
         y: sampleData.sample_values,
@@ -99,7 +99,7 @@ function createBubble(sampleData) {
       Plotly.newPlot("bubble", traceData, layout);
 }
 
-function demoInfo(metadata) {
+function DI(metadata) {
     var sampleMetadata = document.getElementById("sample-metadata");
     sampleMetadata.innerHTML = '';
 
@@ -110,7 +110,7 @@ function demoInfo(metadata) {
     });
 }
 
-function createGauge(metadata) {
+function CG(metadata) {
     var trace1 = {
         domain: { 
             x: [0, 1], 
@@ -118,10 +118,10 @@ function createGauge(metadata) {
         },
         value: metadata.wfreq,
         title: { 
-            text: "Belly Button Washing Frequency" 
+            text: "Belly Button Washing Freq" 
         },
-        type: "indicator",
-        mode: "gauge",
+        type: "Indicator",
+        mode: "Gauge",
         gauge: {
             axis: { 
                 range: [0, 9]
